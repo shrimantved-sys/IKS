@@ -1,0 +1,55 @@
+/* Base Page Animations */
+body {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover Effects */
+.glow-on-hover {
+  transition: text-shadow 0.3s ease;
+}
+.glow-on-hover:hover {
+  text-shadow: 0 0 12px var(--accent);
+}
+
+/* Loader Animation */
+#loader {
+  position: fixed; inset: 0;
+  background: var(--bg-primary);
+  z-index: 9999;
+  display: flex; justify-content: center; align-items: center;
+  transition: opacity 0.5s ease;
+}
+.spinner {
+  width: 60px; height: 60px;
+  border: 4px solid rgba(212, 175, 55, 0.2);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* Optional Parallax enhancement class */
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Micro-animations for text */
+.text-reveal {
+  overflow: hidden;
+}
+.text-reveal > span {
+  display: block;
+  transform: translateY(100%);
+  animation: reveal 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+@keyframes reveal {
+  to { transform: translateY(0); }
+}
